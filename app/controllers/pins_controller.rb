@@ -23,7 +23,7 @@ class PinsController < ApplicationController
       else
         render :new 
       end
-    end
+  end
 
   def update
       if @pin.update(pin_params)
@@ -31,7 +31,7 @@ class PinsController < ApplicationController
       else
         render :edit 
       end
-    end
+  end
 
   def destroy
     @pin.destroy
@@ -51,6 +51,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
