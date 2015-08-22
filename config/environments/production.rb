@@ -90,6 +90,5 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-  #this is an attempt to fix images not showing on heroku, this line already in applicaton.rb
-  config.assets.initialize_on_precompile = false
+  
 end
