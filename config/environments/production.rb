@@ -81,6 +81,10 @@ Rails.application.configure do
   #NOTE to change localhost to actual host name, (port: 3000)
   config.action_mailer.default_url_options = { host: 'obi-pinteresting.herokuapp.com' }
   
+  # config/initializers/paperclip.rb
+  Paperclip::Attachment.default_options[:s3_host_name] = 's3-us-west-2.amazonaws.com'
+
+  
   #Sets Paperclip to upload images to Amazon S3
   config.paperclip_defaults = {
     :storage => :s3,
@@ -89,6 +93,7 @@ Rails.application.configure do
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
+  
   }
   
 end
